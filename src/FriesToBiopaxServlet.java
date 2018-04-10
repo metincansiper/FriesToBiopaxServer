@@ -20,17 +20,17 @@ import org.json.simple.parser.ParseException;
 public class FriesToBiopaxServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private JSONParser jsonParser;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public FriesToBiopaxServlet() {
-        super();
-        
-        jsonParser = new JSONParser();
-    }
-    
-    /**
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public FriesToBiopaxServlet() {
+		super();
+
+		jsonParser = new JSONParser();
+	}
+
+	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

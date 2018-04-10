@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>FriesToBiopaxServer</groupId>
+  <artifactId>FriesToBiopaxServer</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+           <groupId>org.apache.tomcat.maven</groupId>
+           <artifactId>tomcat7-maven-plugin</artifactId>
+           <version>2.2</version>
+           <configuration>
+           	   <url>http://localhost:8080/manager/text</url>
+               <server>TomcatServer</server>
+	           <path>/FriesToBiopaxServer</path>
+           </configuration>
+       </plugin>
+    </plugins>
+  </build>
+  <repositories>
+  	<repository>
+	    <id>panda</id>
+	    <name>Pathway and Data Analysis Maven Repo</name>
+	    <url>https://raw.githubusercontent.com/PathwayAndDataAnalysis/repo/master/maven-repo/</url>
+	    <snapshots><enabled>true</enabled></snapshots>
+    </repository>
+  </repositories>
+  <dependencies>
+	<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>servlet-api</artifactId>
+	    <version>3.0-alpha-1</version>
+	    <scope>provided</scope>
+	</dependency>
+	<dependency>
+	  	<groupId>org.clulab.frext</groupId>
+		<artifactId>frext</artifactId>
+		<version>1.2.1</version>
+	</dependency>
+	<dependency>
+	  	<groupId>org.panda</groupId>
+		<artifactId>frexttobiopax</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</dependency>
+	<!-- <dependency>
+	  	<groupId>org.mskcc.cbio.pathwaycards</groupId>
+		<artifactId>convertor</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</dependency> -->
+	<dependency>
+  		<groupId>com.googlecode.json-simple</groupId>
+  		<artifactId>json-simple</artifactId>
+  		<version>1.1.1</version>
+  	</dependency>
+  	<!-- This is needed from frexttobiopax through paxtools and expected to be installed without defining here
+  	but interestingly we need to define it here -->
+  	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>3.4</version>
+	</dependency>
+  </dependencies>
+</project>

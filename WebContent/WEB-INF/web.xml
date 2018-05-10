@@ -9,13 +9,4 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-       <servlet-name>FriesToBiopaxServlet</servlet-name>
-       <servlet-class>FriesToBiopaxServlet</servlet-class>
-   </servlet>
-
-   <servlet-mapping>
-       <servlet-name>FriesToBiopaxServlet</servlet-name>
-       <url-pattern>/fries-to-biopax</url-pattern>
-   </servlet-mapping>
 </web-app>
